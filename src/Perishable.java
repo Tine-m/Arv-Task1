@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Perishable extends Product{
+public class Perishable extends Product implements FoodWaste{
 
     // Attributes
     private LocalDate bestBefore;
@@ -30,5 +30,10 @@ public class Perishable extends Product{
     // Mutators
     public void setBestBefore(LocalDate bestBefore) {
         this.bestBefore = bestBefore;
+    }
+
+   // @Override
+    public boolean isEdible() {
+        return isExpired();
     }
 }

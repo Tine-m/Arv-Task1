@@ -1,11 +1,14 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ProductCatalogue {
 
     //ArrayList af typen Product
-    ArrayList<Product> productList = new ArrayList<>();
+    List<Product> productList = new ArrayList<>();
 
+    List<Product> productList2 = new LinkedList<>();
 
     // addProduct method (name, price)
     public void addProduct(String name, double price) {
@@ -22,9 +25,12 @@ public class ProductCatalogue {
 
     public void printCatalog(){
         for(Product n : productList){
-            System.out.println(n.getName()) ;
-            //System.out.println(n.) ;
-
+            System.out.print(n.toString()) ;
+            if (n instanceof Perishable) {
+                System.out.print(" " +((Perishable) n).isExpired());
+                ((Perishable) n).isEdible();
+            }
+            System.out.println() ;
         }
     }
 
