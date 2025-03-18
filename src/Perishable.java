@@ -11,6 +11,10 @@ public class Perishable extends Product{
         this.bestBefore = bestBefore;
     }
 
+    public boolean isExpired() {
+        return bestBefore.isBefore(LocalDate.now());
+    }
+
     // Methods
     @Override
     public String toString(){

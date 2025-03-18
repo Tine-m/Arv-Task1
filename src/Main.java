@@ -11,18 +11,30 @@ public class Main {
         // Instantiate Perishable objects
         Perishable chokolade = new Perishable("Dubai_Chokolade", 4299, LocalDate.of(2025,3,20));
         Perishable gifler = new Perishable("Dubai_kanel_Gifler_special edition 1987 version limited ©", 20, LocalDate.now().minusDays(2));
+        
+        ProductCatalogue bilka = new ProductCatalogue();
+        bilka.addProduct("lampe", 124.99);
+        bilka.addProduct("gifler",24.49,LocalDate.now().plusDays(200));
+        bilka.addProduct("Svens Pølser",24.49,LocalDate.now().minusDays(5));
+        bilka.printCatalog();
+
 
         // Add products to ArrayList
-        ArrayList<Product> products = new ArrayList<>();
-        products.add(stol);
+     /*   ArrayList<Product> products = new ArrayList<>();
+        products.add(stol)
         products.add(shirt);
         products.add(chokolade);
         products.add(gifler);
-        
+
         // Print toString 
         for (Product p : products){
-            System.out.println(p.toString()); //toString er polymorf metode
-        }
+            System.out.println(p.toString());
+            //toString er polymorf metode
+        }*/
+
+        // System.out.println(gifler.getName() + " " + gifler.isExpired());
+        //System.out.println(chokolade.getName() + " " + chokolade.isExpired());
+
     }
 }
 
